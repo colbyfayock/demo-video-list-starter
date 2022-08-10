@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head'
-import Image from 'next/image'
 
 import Layout from '@components/Layout';
 import Container from '@components/Container';
 import Button from '@components/Button';
 
-import images from '@data/images';
+import videos from '@data/videos';
 
 import styles from '@styles/Home.module.scss'
 
@@ -14,27 +13,31 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>My Images</title>
-        <meta name="description" content="All of my cool images." />
+        <title>My Videos</title>
+        <meta name="description" content="All of my cool videos." />
       </Head>
 
       <Container>
-        <h1 className="sr-only">My Images</h1>
+        <h1 className="sr-only">My Videos</h1>
 
-        <h2 className={styles.header}>Images</h2>
+        <h2 className={styles.header}>Videos</h2>
 
-        <ul className={styles.images}>
-          {images.map(image => {
+        <ul className={styles.videos}>
+          {videos.map(video => {
             return (
-              <li key={image.id}>
-                <a href={image.link} rel="noreferrer">
-                  <div className={styles.imageImage}>
-                    <Image width={image.width} height={image.height} src={image.image} alt="" />
-                  </div>
-                  <h3 className={styles.imageTitle}>
-                    { image.title }
-                  </h3>
-                </a>
+              <li key={video.id}>
+
+                <video
+                  controls
+                  width="100%"
+                  src={`/videos/${video.id}.${video.format}`}
+                />
+
+                <h3 className={styles.videoTitle}>
+                  <a href={video.link} rel="noreferrer">
+                    { video.title }
+                    </a>
+                </h3>
               </li>
             )
           })}
