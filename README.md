@@ -1,23 +1,23 @@
 # Demo Video List Starter
 
-A Next.js video gallery that renders local video files with browser playback controls and links each title to its source page.
+A Next.js video gallery that plays local video files and links each title to its source page.
 
-## Use this template
+## Getting Started
 
-```bash
-npx create-next-app -e https://github.com/colbyfayock/demo-video-list-starter
-```
-
-## Local setup
-
-Install dependencies with yarn, then start the development server:
+- Set up a new project
 
 ```bash
-yarn install
-yarn dev
+npx create-next-app my-video-list -e https://github.com/colbyfayock/demo-video-list-starter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+- Navigate to your new project
 
-Use `yarn build` to create a production build.
-After building, use `yarn start` to serve the production build.
+```bash
+cd my-video-list
+```
+
+- Start the development server
+
+```bash
+npm run dev
+```
